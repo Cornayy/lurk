@@ -1,0 +1,35 @@
+{
+    "name": "typescript-starter",
+    "version": "0.1.0",
+    "description": "My default configuration for typescript projects.",
+    "main": "./lib/src/index.js",
+    "scripts": {
+        "build": "tsc",
+        "start": "ts-node src/index.ts"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Cornayy/typescript-starter.git"
+    },
+    "bin": {
+        "firecase": "./lib/src/index.js"
+    },
+    "author": "Cornayy",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Cornayy/typescript-starter/issues"
+    },
+    "homepage": "https://github.com/Cornayy/typescript-starter#readme",
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^4.7.0",
+        "@typescript-eslint/parser": "^4.7.0",
+        "eslint": "^7.13.0",
+        "eslint-config-prettier": "^6.15.0",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-prettier": "^3.1.4",
+        "nodemon": "^2.0.6",
+        "prettier": "^2.1.2",
+        "ts-node": "^9.0.0",
+        "typescript": "^4.0.5"
+    }
+}
