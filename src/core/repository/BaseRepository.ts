@@ -1,7 +1,7 @@
 import { IRepository } from './IRepository';
 
 export abstract class BaseRepository<T> implements IRepository<T> {
-    protected data: T[];
+    private data: T[];
 
     constructor() {
         this.data = this.collect();
