@@ -1,18 +1,12 @@
-import { IRepository } from './IRepository';
+import { BaseRepository } from './BaseRepository';
 import { IExpression } from '../IExpression';
 
-export class ExpressionRepository implements IRepository<IExpression> {
-    private expressions: IExpression[];
-
+export class ExpressionRepository extends BaseRepository<IExpression> {
     constructor() {
-        this.expressions = this.collect();
+        super();
     }
 
-    private collect(): IExpression[] {
+    public collect(): IExpression[] {
         throw new Error('Method not implemented.');
-    }
-
-    public all(): IExpression[] {
-        return this.expressions;
     }
 }
