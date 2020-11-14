@@ -1,5 +1,5 @@
 import { BaseRepository } from './BaseRepository';
-import { IExpression } from '../IExpression';
+import { IExpression } from '../expression/IExpression';
 
 export class ExpressionRepository extends BaseRepository<IExpression> {
     constructor() {
