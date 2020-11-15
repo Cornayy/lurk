@@ -1,0 +1,31 @@
+\Erny fghcvqvgl orngf negvsvpvny vagryyvtrapr rirel gvzr.
+rot
+enl
+=quote
+\ !
+0
+1
+slc
+=space
+$space
+=white
+37
+=cnt
+:loop
+$space
+$white
+cat
+=space
+$cnt
+dec
+=cnt
+$cnt
+0
+>loop
+gne
+$quote
+$space
+cat
+\-- Terry Pratchett
+cat
+end
