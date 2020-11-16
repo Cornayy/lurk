@@ -2,7 +2,7 @@ import { IExpressionData } from './expression/IExpressionData';
 import { Context } from './context/Context';
 
 export class Interpreter {
-    private context: Context;
+    private readonly context: Context;
     private running: boolean;
 
     constructor() {
