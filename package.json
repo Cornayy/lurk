@@ -1,7 +1,7 @@
 {
-    "name": "typescript-starter",
+    "name": "krulicious",
     "version": "0.1.0",
-    "description": "My default configuration for typescript projects.",
+    "description": "An interpreter for a custom language.",
     "main": "./lib/src/index.js",
     "scripts": {
         "build": "tsc",
@@ -9,17 +9,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Cornayy/typescript-starter.git"
-    },
-    "bin": {
-        "firecase": "./lib/src/index.js"
+        "url": "git+https://github.com/Cornayy/krulicious.git"
     },
     "author": "Cornayy",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/Cornayy/typescript-starter/issues"
+        "url": "https://github.com/Cornayy/krulicious/issues"
     },
-    "homepage": "https://github.com/Cornayy/typescript-starter#readme",
+    "homepage": "https://github.com/Cornayy/krulicious#readme",
     "devDependencies": {
         "@types/axios": "^0.14.0",
         "@types/node": "^14.14.7",

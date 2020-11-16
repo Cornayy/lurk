@@ -7,6 +7,6 @@ export class ExpressionRepository extends BaseRepository<IExpression> {
     }
 
     public collect(): IExpression[] {
-        throw new Error('Method not implemented.');
+        return [];
     }
 }
