@@ -1,2 +1,2 @@
-# typescript-starter
-My default configuration for typescript projects.
+# lurk
+An interpreter for the Krul language.
