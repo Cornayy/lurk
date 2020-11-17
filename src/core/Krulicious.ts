@@ -1,3 +1,4 @@
+import { LogManager } from './logging/LogManager';
 import { ExpressionRepository } from './repository/ExpressionRepository';
 import { ExpressionFactory } from './parsing/ExpressionFactory';
 import { HttpFileRetriever } from './parsing/strategies/HttpFileRetriever';
@@ -26,10 +27,10 @@ export class Krulicious {
                     this.settings.sourcePath.concat(this.currentSource)
                 );
                 this.currentSource = this.interpreter.interpret(data);
-                console.log(this.currentSource);
+                LogManager.getLogger(true).log(this.currentSource);
             }
         } catch (e) {
-            console.log(`Interpretation failed, "${e.message}"`);
+            LogManager.getLogger(true).log(`Interpretation failed, ${e.message}`);
         }
     }
 

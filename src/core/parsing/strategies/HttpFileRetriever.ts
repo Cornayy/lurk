@@ -1,3 +1,4 @@
+import { LogManager } from './../../logging/LogManager';
 import { IFileRetriever } from '../../types/IFileRetriever';
 import axios from 'axios';
 
@@ -7,7 +8,7 @@ export class HttpFileRetriever implements IFileRetriever {
             const { data } = await axios.get(file);
             return data.toString().split('\n');
         } catch (err) {
-            console.error(`An error occurred while trying to fetch: ${file}.`);
+            LogManager.getLogger(true).log(`An error occurred while trying to fetch: ${file}.`)
         }
     }
 }
