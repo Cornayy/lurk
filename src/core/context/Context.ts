@@ -1,4 +1,4 @@
-import { IListener } from './IListener';
+import { IListener } from '../types/IListener';
 import { Stack } from './Stack';
 
 export class Context {

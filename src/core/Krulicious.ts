@@ -7,26 +7,26 @@ import { Interpreter } from './Interpreter';
 import { FileParser } from './parsing/FileParser';
 
 export class Krulicious {
+    private currentSource: string;
     private readonly settings: ISettings;
     private readonly parser: FileParser;
     private readonly interpreter: Interpreter;
 
     constructor(interpreter: Interpreter, settings: ISettings) {
+        this.currentSource = '/start.txt';
         this.interpreter = interpreter;
         this.settings = settings;
         this.parser = this.initialize();
     }
 
     public async start(): Promise<void> {
-        let currentSource = '/start.txt';
-
         try {
             while (this.interpreter.isRunning()) {
                 const data = await this.parser.parse(
-                    this.settings.sourcePath.concat(currentSource)
+                    this.settings.sourcePath.concat(this.currentSource)
                 );
-                currentSource = this.interpreter.interpret(data);
-                console.log(currentSource);
+                this.currentSource = this.interpreter.interpret(data);
+                console.log(this.currentSource);
             }
         } catch (e) {
             console.log(`Interpretation failed, "${e.message}"`);

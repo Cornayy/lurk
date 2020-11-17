@@ -11,7 +11,12 @@ export class Interpreter {
     }
 
     public interpret(expressions: IExpressionData[]): string {
-        for (const { expression, input } of expressions) {
+        for (
+            this.context.position = 0;
+            this.context.position < expressions.length;
+            this.context.position++
+        ) {
+            const { expression, input } = expressions[this.context.position];
             expression.interpret(this.context, input);
         }
 
