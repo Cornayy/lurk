@@ -13,9 +13,8 @@ This interpreter was originally a university assignment, but I decided to take i
 The lurk program is constructed with the following configuration:
 
 ```typescript
-interface ISettings
-{
-    useLocalPath: boolean; // Use existing code files (src/resources).
+interface ISettings {
+    useLocalPath: boolean; // Use the local source code files (src/resources).
     sourcePath: string; // Local path (src/resources) or online path.
     expressionPath: string; // The path where expressions are located (src/core/expressions).
     currentSource: string; // The current source code file that is being executed.
