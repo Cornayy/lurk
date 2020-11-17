@@ -2,6 +2,7 @@ import { LogManager } from './logging/LogManager';
 import { ISettings } from './types/ISettings';
 import { Interpreter } from './Interpreter';
 import { FileParser } from './parsing/FileParser';
+import { join } from 'path';
 
 export class Lurk {
     private currentSource: string;
@@ -20,7 +21,7 @@ export class Lurk {
         try {
             while (this.interpreter.isRunning()) {
                 const data = await this.parser.parse(
-                    this.settings.sourcePath.concat(this.currentSource)
+                    join(this.settings.sourcePath, this.currentSource)
                 );
                 this.currentSource = this.interpreter.interpret(data);
                 LogManager.getLogger().log(this.currentSource);

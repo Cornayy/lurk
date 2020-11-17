@@ -4,6 +4,6 @@ const lurk = LurkFactory.create({
     useLocalPath: true,
     sourcePath: 'src/resources',
     expressionPath: 'src/core/expression',
-    currentSource: '/start.txt',
+    currentSource: 'start.txt',
 });
 lurk.start();
