@@ -16,4 +16,8 @@ export class Stack<T> {
     public empty(): boolean {
         return this.items.length === 0;
     }
+
+    public clear(): void {
+        this.items = [];
+    }
 }

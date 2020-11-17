@@ -18,9 +18,16 @@ export class Krulicious {
     }
 
     public async start(): Promise<void> {
+        let currentSource = '/start.txt';
+
         try {
-            const data = await this.parser.parse(this.settings.sourcePath.concat('/start.txt'));
-            this.interpreter.interpret(data);
+            while (this.interpreter.isRunning()) {
+                const data = await this.parser.parse(
+                    this.settings.sourcePath.concat(currentSource)
+                );
+                currentSource = this.interpreter.interpret(data);
+                console.log(currentSource);
+            }
         } catch (e) {
             console.log(`Interpretation failed, "${e.message}"`);
         }
