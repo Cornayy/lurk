@@ -1,4 +1,4 @@
-import { IExpression } from './../expression/IExpression';
+import { IExpression } from './IExpression';
 
 export interface IExpressionData {
     expression: IExpression;

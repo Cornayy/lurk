@@ -1,15 +1,18 @@
 import { IRepository } from './IRepository';
 
 export abstract class BaseRepository<T> implements IRepository<T> {
-    private readonly data: T[];
+    protected readonly location?: string;
+    protected data: T[];
 
-    constructor() {
-        this.data = this.collect();
+    constructor(location?: string) {
+        this.data = [];
+        this.location = location;
+        this.collect(this.location);
     }
 
     public all(): T[] {
         return this.data;
     }
 
-    protected abstract collect(): T[];
+    protected abstract collect(location?: string): void;
 }

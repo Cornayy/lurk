@@ -1,4 +1,4 @@
-import { IFileRetriever } from './IFileRetriever';
+import { IFileRetriever } from '../../types/IFileRetriever';
 import axios from 'axios';
 
 export class HttpFileRetriever implements IFileRetriever {

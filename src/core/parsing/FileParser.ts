@@ -1,7 +1,7 @@
-import { IFactory } from './IFactory';
-import { IExpressionData } from './../expression/IExpressionData';
-import { IFileRetriever } from './strategies/IFileRetriever';
-import { IExpression } from '../expression/IExpression';
+import { IFactory } from '../types/IFactory';
+import { IExpressionData } from '../types/IExpressionData';
+import { IFileRetriever } from '../types/IFileRetriever';
+import { IExpression } from '../types/IExpression';
 
 export class FileParser {
     private readonly factory: IFactory<IExpression>;

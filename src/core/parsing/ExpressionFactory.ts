@@ -1,6 +1,6 @@
-import { IFactory } from './IFactory';
+import { IFactory } from '../types/IFactory';
 import { IRepository } from './../repository/IRepository';
-import { IExpression } from '../expression/IExpression';
+import { IExpression } from '../types/IExpression';
 
 export class ExpressionFactory implements IFactory<IExpression> {
     private readonly expressions: IExpression[];

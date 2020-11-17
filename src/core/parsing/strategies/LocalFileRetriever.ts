@@ -1,4 +1,4 @@
-import { IFileRetriever } from './IFileRetriever';
+import { IFileRetriever } from '../../types/IFileRetriever';
 import { readFileSync, existsSync } from 'fs';
 
 export class LocalFileRetriever implements IFileRetriever {

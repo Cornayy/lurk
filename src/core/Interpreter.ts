@@ -1,4 +1,4 @@
-import { IExpressionData } from './expression/IExpressionData';
+import { IExpressionData } from './types/IExpressionData';
 import { Context } from './context/Context';
 
 export class Interpreter {

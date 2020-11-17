@@ -2,7 +2,7 @@ import { ExpressionRepository } from './repository/ExpressionRepository';
 import { ExpressionFactory } from './parsing/ExpressionFactory';
 import { HttpFileRetriever } from './parsing/strategies/HttpFileRetriever';
 import { LocalFileRetriever } from './parsing/strategies/LocalFileRetriever';
-import { ISettings } from './config/ISettings';
+import { ISettings } from './types/ISettings';
 import { Interpreter } from './Interpreter';
 import { FileParser } from './parsing/FileParser';
 
@@ -30,7 +30,9 @@ export class Krulicious {
         const retriever = this.settings.useLocalPath
             ? new LocalFileRetriever()
             : new HttpFileRetriever();
-        const factory = new ExpressionFactory(new ExpressionRepository());
+        const factory = new ExpressionFactory(
+            new ExpressionRepository(this.settings.expressionPath)
+        );
         return new FileParser(retriever, factory);
     }
 }
