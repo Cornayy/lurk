@@ -27,10 +27,10 @@ export class Krulicious {
                     this.settings.sourcePath.concat(this.currentSource)
                 );
                 this.currentSource = this.interpreter.interpret(data);
-                LogManager.getLogger(true).log(this.currentSource);
+                LogManager.getLogger().log(this.currentSource);
             }
-        } catch (e) {
-            LogManager.getLogger(true).log(`Interpretation failed, ${e.message}`);
+        } catch (err) {
+            LogManager.getLogger().log(`Interpretation failed, ${err.message}`);
         }
     }
 

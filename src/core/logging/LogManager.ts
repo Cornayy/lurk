@@ -6,8 +6,8 @@ export class LogManager {
         0: new DebugLogger(),
     };
 
-    public static getLogger(debug: boolean): ILogger {
-        const index = debug ? 0 : 1;
-        return this.loggers[index];
+    public static getLogger(): ILogger {
+        const [first] = Object.values(this.loggers);
+        return first;
     }
 }

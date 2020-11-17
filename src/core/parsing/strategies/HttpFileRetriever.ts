@@ -8,7 +8,7 @@ export class HttpFileRetriever implements IFileRetriever {
             const { data } = await axios.get(file);
             return data.toString().split('\n');
         } catch (err) {
-            LogManager.getLogger(true).log(`An error occurred while trying to fetch: ${file}.`)
+            LogManager.getLogger().log(`An error occurred while trying to fetch: ${file}.`)
         }
     }
 }

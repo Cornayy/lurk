@@ -1,15 +1,14 @@
 import { IExpression } from '../../types/IExpression';
 import { Context } from '../../context/Context';
 
-export class AddExpression implements IExpression {
+export class IncrementExpression implements IExpression {
     public interpret(context: Context): void {
-        const first = parseInt(context.stack.pop());
-        const second = parseInt(context.stack.pop());
-        const result = first + second;
+        let num = parseInt(context.stack.pop());
+        const result = ++num;
         context.stack.push(result.toString());
     }
 
     public match(input: string): boolean {
-        return input.toLowerCase() === 'add';
+        return input.toLowerCase() === 'inc';
     }
 }

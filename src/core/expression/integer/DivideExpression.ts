@@ -1,15 +1,15 @@
 import { IExpression } from '../../types/IExpression';
 import { Context } from '../../context/Context';
 
-export class AddExpression implements IExpression {
+export class DivideExpression implements IExpression {
     public interpret(context: Context): void {
         const first = parseInt(context.stack.pop());
         const second = parseInt(context.stack.pop());
-        const result = first + second;
+        const result = second / first;
         context.stack.push(result.toString());
     }
 
     public match(input: string): boolean {
-        return input.toLowerCase() === 'add';
+        return input.toLowerCase() === 'div';
     }
 }
