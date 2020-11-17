@@ -1,7 +1,7 @@
 {
-    "name": "krulicious",
+    "name": "lurk",
     "version": "0.1.0",
-    "description": "An interpreter for a custom language.",
+    "description": "An interpreter for the Krul language.",
     "main": "./lib/src/index.js",
     "scripts": {
         "build": "tsc",
@@ -9,14 +9,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Cornayy/krulicious.git"
+        "url": "git+https://github.com/Cornayy/lurk.git"
     },
     "author": "Cornayy",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/Cornayy/krulicious/issues"
+        "url": "https://github.com/Cornayy/lurk/issues"
     },
-    "homepage": "https://github.com/Cornayy/krulicious#readme",
+    "homepage": "https://github.com/Cornayy/lurk#readme",
     "devDependencies": {
         "@types/axios": "^0.14.0",
         "@types/node": "^14.14.7",

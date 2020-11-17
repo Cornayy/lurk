@@ -7,7 +7,7 @@ import { ISettings } from './types/ISettings';
 import { Interpreter } from './Interpreter';
 import { FileParser } from './parsing/FileParser';
 
-export class Krulicious {
+export class Lurk {
     private currentSource: string;
     private readonly settings: ISettings;
     private readonly parser: FileParser;

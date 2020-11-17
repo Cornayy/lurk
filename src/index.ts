@@ -1,9 +1,9 @@
-import { Krulicious } from './core/Krulicious';
+import { Lurk } from './core/Lurk';
 import { Interpreter } from './core/Interpreter';
 
-const krulicious = new Krulicious(new Interpreter(), {
+const lurk = new Lurk(new Interpreter(), {
     useLocalPath: true,
     sourcePath: 'src/resources',
     expressionPath: 'src/core/expression',
 });
-krulicious.start();
+lurk.start();
