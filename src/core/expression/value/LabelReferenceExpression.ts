@@ -8,6 +8,6 @@ export class LabelReferenceExpression implements IExpression {
     }
 
     public match(input: string): boolean {
-        return new RegExp('>.*$').test(input);
+        return new RegExp('^>.*$').test(input);
     }
 }

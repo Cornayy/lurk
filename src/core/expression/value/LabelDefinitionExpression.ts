@@ -7,7 +7,7 @@ export class LabelDefinitionExpression implements IExpression {
     }
 
     public match(input: string, context: Context): boolean {
-        const match = new RegExp(':.*$').test(input);
+        const match = new RegExp('^:.*$').test(input);
         if (match) this.define(input.substring(1), context);
         return match;
     }

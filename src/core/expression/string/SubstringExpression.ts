@@ -6,7 +6,7 @@ export class SubstringExpression implements IExpression {
         const to = parseInt(context.stack.pop());
         const from = parseInt(context.stack.pop());
         const value = context.stack.pop();
-        context.stack.push(value.substring(from, to - from));
+        context.stack.push(value.substr(from, to - from));
     }
 
     public match(input: string): boolean {

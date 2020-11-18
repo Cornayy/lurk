@@ -19,16 +19,23 @@ export class Lurk {
 
     public async start(): Promise<void> {
         try {
-            while (this.interpreter.isRunning()) {
-                const data = await this.parser.parse(
-                    join(this.settings.sourcePath, this.currentSource),
-                    this.interpreter.getContext()
-                );
-                this.currentSource = this.interpreter.interpret(data);
-                LogManager.getLogger().log(this.currentSource);
-            }
+            this.cycle();
         } catch (err) {
             LogManager.getLogger().log(`Interpretation failed, ${err.message}`);
         }
+    }
+
+    private async cycle(): Promise<void> {
+        // Recursive calls till interpreter is finished.
+        LogManager.getLogger().log(this.currentSource);
+        const data = await this.parser.parse(
+            join(this.settings.sourcePath, this.currentSource),
+            this.interpreter.getContext()
+        );
+        this.currentSource = this.interpreter.interpret(data);
+
+        // Report output when interpreter is finished.
+        if (this.interpreter.isRunning()) this.cycle();
+        else LogManager.getLogger().log(`Output: ${this.currentSource}`);
     }
 }
