@@ -17,14 +17,14 @@ export class FileParser {
         const lines = await this.retriever.retrieve(file);
 
         return lines
-            .filter((line) => line)
-            .map((line, index) => {
+            .filter((input) => input)
+            .map((input, index) => {
                 context.position = index;
-                const expression = this.factory.create(line, context);
+                const expression = this.factory.create(input, context);
 
                 return {
                     expression,
-                    input: line,
+                    input,
                 };
             });
     }
