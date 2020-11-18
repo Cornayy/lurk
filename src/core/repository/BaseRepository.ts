@@ -2,7 +2,7 @@ import { IRepository } from './IRepository';
 
 export abstract class BaseRepository<T> implements IRepository<T> {
     protected readonly location?: string;
-    protected data: T[] = [];
+    protected readonly data: T[] = [];
 
     constructor(location?: string) {
         this.location = location;
