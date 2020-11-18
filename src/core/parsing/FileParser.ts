@@ -18,7 +18,8 @@ export class FileParser {
 
         return lines
             .filter((line) => line)
-            .map((line) => {
+            .map((line, index) => {
+                context.position = index;
                 const expression = this.factory.create(line, context);
 
                 return {

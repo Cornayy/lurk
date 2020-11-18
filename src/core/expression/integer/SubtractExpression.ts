@@ -10,6 +10,6 @@ export class SubtractExpression implements IExpression {
     }
 
     public match(input: string): boolean {
-        return input.toLowerCase() === 'add';
+        return input.toLowerCase() === 'sub';
     }
 }
