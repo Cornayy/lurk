@@ -1,13 +1,13 @@
 import { IExpression } from '../../types/IExpression';
 import { Context } from '../../context/Context';
 
-export class DuplicateExpression implements IExpression {
+export class LengthExpression implements IExpression {
     public interpret(context: Context): void {
-        const duplicate = context.stack.peek();
-        context.stack.push(duplicate);
+        const value = context.stack.pop();
+        context.stack.push(value.length.toString());
     }
 
     public match(input: string): boolean {
-        return input.toLowerCase() === 'dup';
+        return input.toLowerCase() === 'len';
     }
 }

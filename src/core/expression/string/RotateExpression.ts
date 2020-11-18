@@ -1,13 +1,12 @@
 import { IExpression } from '../../types/IExpression';
 import { Context } from '../../context/Context';
 
-export class DuplicateExpression implements IExpression {
+export class RotateExpression implements IExpression {
     public interpret(context: Context): void {
-        const duplicate = context.stack.peek();
-        context.stack.push(duplicate);
+        const value = context.stack.pop();
     }
 
     public match(input: string): boolean {
-        return input.toLowerCase() === 'dup';
+        return input.toLowerCase() === 'rot';
     }
 }

@@ -1,13 +1,13 @@
 import { IExpression } from '../../types/IExpression';
 import { Context } from '../../context/Context';
 
-export class DuplicateExpression implements IExpression {
+export class NewLineExpression implements IExpression {
     public interpret(context: Context): void {
-        const duplicate = context.stack.peek();
-        context.stack.push(duplicate);
+        const value = context.stack.pop();
+        context.stack.push(value.concat('\n'));
     }
 
     public match(input: string): boolean {
-        return input.toLowerCase() === 'dup';
+        return input.toLowerCase() === 'enl';
     }
 }
