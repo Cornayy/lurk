@@ -29,4 +29,8 @@ export class Interpreter {
     public isRunning(): boolean {
         return this.running;
     }
+
+    public getContext(): Context {
+        return this.context;
+    }
 }

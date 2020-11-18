@@ -1,3 +1,4 @@
+import { Context } from './../context/Context';
 import { IFactory } from '../types/IFactory';
 import { IExpressionData } from '../types/IExpressionData';
 import { IFileRetriever } from '../types/IFileRetriever';
@@ -12,16 +13,18 @@ export class FileParser {
         this.factory = factory;
     }
 
-    public async parse(file: string): Promise<IExpressionData[]> {
+    public async parse(file: string, context: Context): Promise<IExpressionData[]> {
         const lines = await this.retriever.retrieve(file);
 
-        return lines.map((line) => {
-            const expression = this.factory.create(line);
+        return lines
+            .filter((line) => line)
+            .map((line) => {
+                const expression = this.factory.create(line, context);
 
-            return {
-                expression,
-                input: line,
-            };
-        });
+                return {
+                    expression,
+                    input: line,
+                };
+            });
     }
 }

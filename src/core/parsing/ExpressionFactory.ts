@@ -1,3 +1,4 @@
+import { Context } from './../context/Context';
 import { IFactory } from '../types/IFactory';
 import { IRepository } from './../repository/IRepository';
 import { IExpression } from '../types/IExpression';
@@ -11,8 +12,8 @@ export class ExpressionFactory implements IFactory<IExpression> {
         this.expressions = this.repository.all();
     }
 
-    public create(input: string): IExpression {
-        const expression = this.expressions.find((expression) => expression.match(input));
+    public create(input: string, context: Context): IExpression {
+        const expression = this.expressions.find((expression) => expression.match(input, context));
         if (!expression) throw new Error(`The expression: ${input} did not match any expression.`);
         return expression;
     }

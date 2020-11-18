@@ -21,7 +21,8 @@ export class Lurk {
         try {
             while (this.interpreter.isRunning()) {
                 const data = await this.parser.parse(
-                    join(this.settings.sourcePath, this.currentSource)
+                    join(this.settings.sourcePath, this.currentSource),
+                    this.interpreter.getContext()
                 );
                 this.currentSource = this.interpreter.interpret(data);
                 LogManager.getLogger().log(this.currentSource);

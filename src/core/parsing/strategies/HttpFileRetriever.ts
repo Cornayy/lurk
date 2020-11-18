@@ -6,9 +6,9 @@ export class HttpFileRetriever implements IFileRetriever {
     public async retrieve(file: string): Promise<string[]> {
         try {
             const { data } = await axios.get(file);
-            return data.toString().split('\n');
+            return data.toString().replace(/\n|\r/g, '').split('\n');
         } catch (err) {
-            LogManager.getLogger().log(`An error occurred while trying to fetch: ${file}.`)
+            LogManager.getLogger().log(`An error occurred while trying to fetch: ${file}.`);
         }
     }
 }

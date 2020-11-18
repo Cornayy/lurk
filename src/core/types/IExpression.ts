@@ -2,5 +2,5 @@ import { Context } from '../context/Context';
 
 export interface IExpression {
     interpret(context: Context, input?: string): void;
-    match(input: string): boolean;
+    match(input: string, context?: Context): boolean;
 }
