@@ -1,4 +1,4 @@
-import { IRepository } from './IRepository';
+import { IRepository } from '../interface/IRepository';
 
 export abstract class BaseRepository<T> implements IRepository<T> {
     protected readonly location?: string;

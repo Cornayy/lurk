@@ -1,4 +1,4 @@
-import { IExpression } from '../../types/IExpression';
+import { IExpression } from '../../interface/IExpression';
 import { Context } from '../../context/Context';
 
 export class SubstringExpression implements IExpression {

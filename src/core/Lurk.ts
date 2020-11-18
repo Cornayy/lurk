@@ -1,6 +1,6 @@
-import { IListener } from './types/IListener';
+import { IListener } from './interface/IListener';
 import { LogManager } from './logging/LogManager';
-import { ISettings } from './types/ISettings';
+import { ISettings } from './interface/ISettings';
 import { Interpreter } from './Interpreter';
 import { FileParser } from './parsing/FileParser';
 import { join } from 'path';

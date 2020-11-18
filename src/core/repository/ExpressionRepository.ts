@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { BaseRepository } from './BaseRepository';
-import { IExpression } from '../types/IExpression';
+import { IExpression } from '../interface/IExpression';
 import { readdirSync } from 'fs';
 import { join } from 'path';
 

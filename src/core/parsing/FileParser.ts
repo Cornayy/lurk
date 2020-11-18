@@ -1,8 +1,8 @@
 import { Context } from './../context/Context';
-import { IFactory } from '../types/IFactory';
-import { IExpressionData } from '../types/IExpressionData';
-import { IFileRetriever } from '../types/IFileRetriever';
-import { IExpression } from '../types/IExpression';
+import { IFactory } from '../interface/IFactory';
+import { IExpressionData } from '../interface/IExpressionData';
+import { IFileRetriever } from '../interface/IFileRetriever';
+import { IExpression } from '../interface/IExpression';
 
 export class FileParser {
     private readonly factory: IFactory<IExpression>;

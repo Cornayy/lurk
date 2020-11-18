@@ -1,7 +1,7 @@
 import { Context } from './../context/Context';
-import { IFactory } from '../types/IFactory';
-import { IRepository } from './../repository/IRepository';
-import { IExpression } from '../types/IExpression';
+import { IFactory } from '../interface/IFactory';
+import { IRepository } from '../interface/IRepository';
+import { IExpression } from '../interface/IExpression';
 
 export class ExpressionFactory implements IFactory<IExpression> {
     private readonly expressions: IExpression[];

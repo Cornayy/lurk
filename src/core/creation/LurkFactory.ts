@@ -3,7 +3,7 @@ import { HttpFileRetriever } from './../parsing/strategies/HttpFileRetriever';
 import { LocalFileRetriever } from './../parsing/strategies/LocalFileRetriever';
 import { FileParser } from './../parsing/FileParser';
 import { Interpreter } from './../Interpreter';
-import { ISettings } from './../types/ISettings';
+import { ISettings } from '../interface/ISettings';
 import { Lurk } from './../Lurk';
 import { ExpressionRepository } from '../repository/ExpressionRepository';
 

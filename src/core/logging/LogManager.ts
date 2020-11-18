@@ -1,5 +1,5 @@
 import { DebugLogger } from './DebugLogger';
-import { ILogger } from './../types/ILogger';
+import { ILogger } from '../interface/ILogger';
 
 export class LogManager {
     private static readonly loggers: { [key: number]: ILogger } = {

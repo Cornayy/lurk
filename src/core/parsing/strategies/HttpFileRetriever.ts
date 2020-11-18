@@ -1,5 +1,5 @@
 import { LogManager } from './../../logging/LogManager';
-import { IFileRetriever } from '../../types/IFileRetriever';
+import { IFileRetriever } from '../../interface/IFileRetriever';
 import axios from 'axios';
 
 export class HttpFileRetriever implements IFileRetriever {
