@@ -19,23 +19,21 @@ export class Lurk {
 
     public async start(): Promise<void> {
         try {
-            this.cycle();
+            LogManager.getLogger().log(`Lurk initialized, interpreting ${this.currentSource}...`);
+            await this.cycle(() => LogManager.getLogger().log(this.currentSource));
         } catch (err) {
             LogManager.getLogger().log(`Interpretation failed, ${err.message}`);
         }
     }
 
-    private async cycle(): Promise<void> {
-        // Recursive calls till interpreter is finished.
-        LogManager.getLogger().log(this.currentSource);
+    private async cycle(callback: () => void): Promise<void> {
         const data = await this.parser.parse(
             join(this.settings.sourcePath, this.currentSource),
             this.interpreter.getContext()
         );
         this.currentSource = this.interpreter.interpret(data);
 
-        // Report output when interpreter is finished.
-        if (this.interpreter.isRunning()) this.cycle();
-        else LogManager.getLogger().log(`Output: ${this.currentSource}`);
+        if (this.interpreter.isRunning()) this.cycle(callback);
+        callback();
     }
 }
