@@ -1,5 +1,5 @@
 export class Stack<T> {
-    private items: T[];
+    private items: T[] = [];
 
     public push(element: T): void {
         this.items.push(element);
