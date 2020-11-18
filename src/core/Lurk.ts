@@ -1,3 +1,4 @@
+import { IListener } from './types/IListener';
 import { LogManager } from './logging/LogManager';
 import { ISettings } from './types/ISettings';
 import { Interpreter } from './Interpreter';
@@ -20,20 +21,20 @@ export class Lurk {
     public async start(): Promise<void> {
         try {
             LogManager.getLogger().log(`Lurk initialized, interpreting ${this.currentSource}...`);
-            await this.cycle(() => LogManager.getLogger().log(this.currentSource));
+            await this.cycle({ handler: () => LogManager.getLogger().log(this.currentSource) });
         } catch (err) {
             LogManager.getLogger().log(`Interpretation failed, ${err.message}`);
         }
     }
 
-    private async cycle(callback: () => void): Promise<void> {
+    private async cycle(listener: IListener): Promise<void> {
         const data = await this.parser.parse(
             join(this.settings.sourcePath, this.currentSource),
             this.interpreter.getContext()
         );
         this.currentSource = this.interpreter.interpret(data);
 
-        if (this.interpreter.isRunning()) this.cycle(callback);
-        callback();
+        if (this.interpreter.isRunning()) this.cycle(listener);
+        listener.handler();
     }
 }
