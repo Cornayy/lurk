@@ -1,8 +1,8 @@
 import { IRepository } from '../interface/IRepository';
 
 export abstract class BaseRepository<T> implements IRepository<T> {
+    private readonly data: T[] = [];
     protected readonly location?: string;
-    protected readonly data: T[] = [];
 
     constructor(location?: string) {
         this.location = location;
@@ -11,6 +11,10 @@ export abstract class BaseRepository<T> implements IRepository<T> {
 
     public all(): T[] {
         return this.data;
+    }
+
+    public add(resource: T): void {
+        this.data.push(resource);
     }
 
     protected abstract collect(location?: string): void;

@@ -21,7 +21,7 @@ export class ExpressionRepository extends BaseRepository<IExpression> {
                 this.crawl(location);
             } else {
                 const Expression = Object.values(require(join('../../../', location)))[0] as any;
-                this.data.push(new Expression());
+                this.add(new Expression());
             }
         });
     }
