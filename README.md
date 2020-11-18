@@ -1,6 +1,6 @@
 # lurk
 
-An interpreter for the Krul language.
+An interpreter for a fictional language.
 
 ## About
 
